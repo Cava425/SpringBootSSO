@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ysx.sso.mapper.UserMapper">
+    <select id="findByUsername" resultType="com.ysx.sso.pojo.User">
+        SELECT id, username, password, nickname, avatar, age, mobile, mail, address, create_at
+        FROM t_user
+        WHERE username = #{username}
+    </select>
+
+    <select id="findByEmail" resultType="com.ysx.sso.pojo.User">
+        SELECT id, username, password, nickname, avatar, age, mobile, mail, address, create_at
+        FROM t_user
+        WHERE mail = #{username}
+    </select>
+</mapper>
